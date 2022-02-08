@@ -1,0 +1,25 @@
+.service-details a{
+    color: black;
+    
+    
+
+}
+.service-details{
+    background-color: rgb(235, 214, 25);
+    margin: 10px;
+    border: 1px solid red;
+    margin-right: 10px !important;
+    padding: 10px;
+    
+    
+    
+}
+.service-details:hover{
+    text-decoration: none;
+    background-color: rgb(190, 164, 164);
+    color: white !important;
+}
+.service-details a:hover{
+    text-decoration: none;
+    color:white;
+}

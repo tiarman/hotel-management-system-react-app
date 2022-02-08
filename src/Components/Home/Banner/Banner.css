@@ -1,0 +1,39 @@
+/* Container holding the image and the text */
+
+.bannerAlign {
+    position: relative;
+    text-align: center;
+    color: rgb(10, 10, 10);
+    
+  }
+  
+  
+  /* Top right text */
+  .top-right {
+    position: absolute;
+    top: 75%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-family: "Nanum Gothic";
+    
+  }
+  
+
+  
+  /* Centered text */
+  .centered {
+    position: absolute;
+    top: 59%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    font-family: "Nanum Gothic";
+  }
+  .centered p{
+    text-align: left;
+    margin-left: 200px;
+  }
+
+
+
+  
