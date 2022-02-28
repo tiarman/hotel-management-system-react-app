@@ -1,4 +1,7 @@
-import { CardDeck, Container, Spinner } from 'react-bootstrap';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { CardDeck, Spinner } from 'react-bootstrap';
+import toast from 'react-hot-toast';
 import Fade from 'react-reveal/Fade';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import 'swiper/components/pagination/pagination.scss';
@@ -6,39 +9,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
 import './Testimonials.css';
 import Testimonial from './../testimonial/testimonial';
-import { useState } from 'react';
-
-
-const Reviews = [
-    {
-        id:1,
-        address:"chowara",
-        name: 'Standard Single Room',
-        comment: 'Standard Single Rooms are designed in open -concept living area and have many facilities.',
-        img: 'https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/offers/offer-images/burj-al-arab-presidential-suite-living-room-4-hero.jpg',
-    },
-    {
-        id:2,
-        address:"chowara",
-        name: 'Couple Power Room',
-        comment: 'Superior Double Rooms are perfectly equipped for traveling couples or friends.',
-        img: 'https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/offers/offer-images/burj-al-arab-royal-suite-staircase-5-hero.jpg',
-    },
-    {
-        id:3,
-        address:"chowara",
-        name: 'Family Capacity Room',
-        comment: ' Have lots of in-room facilities and are designed in open-concept living area.',
-        img: 'https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/hotels/dubai/burj-al-arab-jumeirah/room/presidential-two-bedroom-suite/burj-al-arab-presidential-suite-guest-bedroom_6-4_landscape/burj-al-arab-presidential-suite-guest-bedroom_16-9_landscape.jpg?w=2080',
-    }
-]
 
 const Testimonials = () => {
- 
     SwiperCore.use([Pagination, Autoplay]);
-    
+    const [loading, setLoading] = useState(true);
+    const [Reviews, setReviews] = useState([]);
 
-
+    useEffect(() => {
+        axios.get('http://localhost:8000/reviews')
+            .then(res => {
+                setReviews(res.data);
+                setLoading(false);
+            })
+            .catch(error => toast.error(error.message))
+    }, [])
 
     return (
         <section id="reviews" className="testimonials p-md-3">
@@ -48,8 +32,10 @@ const Testimonials = () => {
                         <span>What Our Clients Says</span>
                         <h2>Testimonials</h2>
                     </div>
-                    
-                        <Container>
+                    {loading ?
+                        <div className="text-center">
+                            <Spinner animation="border" variant="danger" />
+                        </div> :
                         <CardDeck className="mt-5">
                             <Swiper
                                 loop={true}
@@ -78,15 +64,14 @@ const Testimonials = () => {
                                 {
                                     Reviews.map(testimonial => {
                                         return (
-                                            <SwiperSlide key={testimonial.id}>
+                                            <SwiperSlide key={testimonial._id}>
                                                 <Testimonial testimonial={testimonial} />
                                             </SwiperSlide>
                                         )
                                     })
                                 }
                             </Swiper>
-                        </CardDeck>
-                        </Container>
+                        </CardDeck>}
                 </div>
             </Fade>
         </section>

@@ -10,8 +10,8 @@ const home = () => {
         <div>
             <Header />
             <BookingCard />
-            <Testimonials />
             <Services />
+            <Testimonials />
             <Contact />
         </div>
     );

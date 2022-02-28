@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Row } from 'react-bootstrap';
-import { toast } from 'react-hot-toast';
+import { Container, Row, Spinner } from 'react-bootstrap';
+import toast from 'react-hot-toast';
 import RoomDetails from './../RoomDetails/RoomDetails';
 import './BookingCard.css'
 
@@ -30,26 +30,33 @@ import './BookingCard.css'
 // ]
 
 const BookingCard = () => {
-    const [rooms, setRooms] = useState([])
+    const [rooms, setRooms] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:8000/all-rooms')
-        .then(res => {
-            setRooms(res.data);
-        })
-        .catch(error => toast.error(error.message))
+            .then(res => {
+                setRooms(res.data);
+            })
+            .catch(error => toast.error(error.message))
     }, [])
 
     return (
-        <section id="rooms" className="text-center py-5">
-        <h5>What We Do</h5>
-        <h1>Rooms We Provide</h1>
-        <Row className="justify-content-center mx-auto mt-md-5 pt-5">
-            {
-                rooms.map(room => <RoomDetails key={room.id} room={room}></RoomDetails>)
-            }
-        </Row>
-    </section>
+        <section className="bookings" id='booking'>
+            <Container>
+                <h5>What We Do</h5>
+                <h3>Bookings We Provide</h3>
+                <Row className="mt-5 justify-content-center">
+                    {
+                        rooms.length  > 0 ? 
+                            rooms.map(room => <RoomDetails key={room._id} room={room} />)
+                            : 
+                            <div className="m-auto">
+                                <img  className='img-fluid' src={Spinner} alt="..." />
+                            </div>
+                    }
+                </Row>
+            </Container>
+        </section>
     );
 };
 

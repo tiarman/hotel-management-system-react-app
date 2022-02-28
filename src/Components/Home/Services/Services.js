@@ -1,60 +1,80 @@
 import React from 'react';
-import ServicesDetails from '../ServicesDetails/ServicesDetails';
-import './Services.css';
-import img from '../../../Images/discount.png';
-import swimmings from '../../../Images/swiming.svg';
+import "swiper/components/effect-coverflow/effect-coverflow.min.css";
+import "swiper/components/pagination/pagination.min.css";
+import SwiperCore, { EffectCoverflow, Pagination } from 'swiper/core';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.min.css";
+import discount from '../../../Images/discount.png';
+import './Services.css'
+import ServicesDetails from './../ServicesDetails/ServicesDetails';
 
 
-const rooms = [
+SwiperCore.use([EffectCoverflow,Pagination]);
+
+const services = [
     {
         id:1,
-        title: 'Standard Single Room',
-        description: 'Standard Single Rooms are designed in open -concept living area.',
-        imgs:swimmings
+        name: 'Restaurant' ,
+        img:discount
     },
     {
         id:2,
-        title: 'Couple Power Room',
-        description: 'Superior Double Rooms are perfectly equipped for traveling couples.',
-        imgs:swimmings
+        name: 'Spa & Beauty ' ,
+        img:discount
     },
     {
         id:3,
-        title: 'Family Capacity Room',
-        description: ' Have lots of in-room facilities and are designed in open-concept.',
-        imgs:swimmings
+        name: 'Swimming' ,
+        img:discount
     },
     {
-        id:3,
-        title: 'Family Capacity Room',
-        description: ' Have lots of in-room facilities and are designed in open-concept.',
-        imgs:swimmings
-    },
-    {
-        id:3,
-        title: 'Family Capacity Room',
-        description: ' Have lots of in-room facilities and are designed in open-concept.',
-        imgs:swimmings
+        id:4,
+        name: 'Conference' ,
+        img:discount
     }
 ]
 
 const Services = () => {
-
     return (
-        <section id="services" className="py-5">
-        <h5 className='text-center'>What We Do</h5>
-        <h1 className='text-center'>Our Awesome Services</h1>
-        <div className='row'>
-            <div className="col-md-6 text-center justify-content-center mx-auto mt-md-5 pt-5">
-                <img style={{ width: "550px", height: "450px" }} src={img} alt=""/>
-            </div>
-            <div className="col-md-6 pt-5">
-            {
-                rooms.map(room => <ServicesDetails key={room.id} room={room}></ServicesDetails>)
-            }
-        </div>
-        </div>
-    </section>
+       <section className="team-container" id="about">
+           <h3>Meet our Awesome team</h3>
+           <p><small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, nulla! Lorem ipsum dolor sit</small></p>
+            <Swiper effect={'coverflow'} grabCursor={true} centeredSlides={true} loop={true}   
+             autoplay={{  delay: 2500, disableOnInteraction: false}} slidesPerView={'auto'} coverflowEffect={{
+                    "rotate": 50,
+                    "stretch": 0,
+                    "depth": 100,
+                    "modifier": 1,
+                    "slideShadows": true
+                }} pagination={true}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 2,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                    },
+                }}
+          >
+                {
+                        services.map(service => {
+                            return(
+                                <SwiperSlide  key={service.id}>
+                                    <ServicesDetails key={service.id} service={service} />
+                                </SwiperSlide>
+                            )
+                        })
+                }
+            
+          
+            </Swiper>
+       </section>
     );
 };
 

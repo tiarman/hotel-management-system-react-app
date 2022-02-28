@@ -1,28 +1,15 @@
-import Fade from 'react-reveal/Fade';
-import './ServicesDetails.css'
+import React from 'react';
+import { Image } from 'react-bootstrap';
+import '../Services/Services.css';
 
-
-const ServicesDetails = ({ room }) => {
-    const { title,imgs, description } = room;
+const SingleMember = ({service}) => {
     return (
-        <div className='services'>
-            <Fade bottom duration={2500} distance="40px">
-                <div className='row service-details'>
-                    <div className='col-md-1'>
-                    <img style={{ width: "50px", height: "50px", marginTop: "10px"  }} src={imgs} alt=""/>
-                    </div>
-                    <div className='col-md-10 ml-3'>
-                    <a href="/">
-                        
-                        <h5>{title}</h5>
-                        <p> {description} </p>
-                        </a>
-                    </div>
-                    
-                </div>
-            </Fade>
+        <div className='team-member'>
+            <Image style={{height:'300px'}} src={service.img} alt="..." />
+            <h5>{service.name}</h5>
+            <button type="">Get Services</button>
         </div>
     );
 };
 
-export default ServicesDetails;
+export default SingleMember;
