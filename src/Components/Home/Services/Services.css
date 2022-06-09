@@ -1,12 +1,12 @@
 .team-container {
   /* background-image: url("../../../Images/bg2.jpg"); */
-  background-color: rgba(201, 109, 201, 0.281);
+  /* background-color: rgba(201, 109, 201, 0.281); */
+  background-color: whitesmoke;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  padding-top: 5rem;
-  height: 120vh;
-  margin-top: -80px;
+  padding-top: 3rem;
+  height: 110vh;
 }
 
 .team-container h3 {

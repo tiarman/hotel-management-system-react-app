@@ -5,6 +5,10 @@ import SwiperCore, { EffectCoverflow, Pagination } from 'swiper/core';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import discount from '../../../Images/discount.png';
+import swiming from '../../../Images/swiming.png';
+import conference from '../../../Images/conference.png';
+import restaurent from '../../../Images/restaurent.png';
+import beauty from '../../../Images/beauty.png';
 import './Services.css'
 import ServicesDetails from './../ServicesDetails/ServicesDetails';
 
@@ -15,30 +19,30 @@ const services = [
     {
         id:1,
         name: 'Restaurant' ,
-        img:discount
+        img:restaurent
     },
     {
         id:2,
         name: 'Spa & Beauty ' ,
-        img:discount
+        img:beauty
     },
     {
         id:3,
         name: 'Swimming' ,
-        img:discount
+        img:swiming
     },
     {
         id:4,
         name: 'Conference' ,
-        img:discount
+        img:conference
     }
 ]
 
 const Services = () => {
     return (
-       <section className="team-container" id="about">
-           <h3>Meet our Awesome team</h3>
-           <p><small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, nulla! Lorem ipsum dolor sit</small></p>
+       <section className="team-container" id="services">
+           <h3>Our Awesome Services</h3>
+           <p><small>We provide best services in our town</small></p>
             <Swiper effect={'coverflow'} grabCursor={true} centeredSlides={true} loop={true}   
              autoplay={{  delay: 2500, disableOnInteraction: false}} slidesPerView={'auto'} coverflowEffect={{
                     "rotate": 50,

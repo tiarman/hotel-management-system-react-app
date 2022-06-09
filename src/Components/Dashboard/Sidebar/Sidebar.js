@@ -22,7 +22,7 @@ const SideBar = ({ show, adminLoading }) => {
             {adminLoading ? <SideBarSpinner /> :
             <ul className='list-unstyled sidebar-items'>
                     <li whileHover={{scale:1.3, originX:0, color:'#00000'}} transition={{type:'spring', stiffness:1000}}>
-                        <Link to="/dashboard/profile"  className={panel === "profile" ? "link-active" : ""} >
+                    <Link to="/dashboard/review" className={panel === "review" ? "link-active" : ""}>
                             <FontAwesomeIcon icon={faUserCircle}  /> <span>Profile</span>
                         </Link>
                     </li>
@@ -40,7 +40,7 @@ const SideBar = ({ show, adminLoading }) => {
                                 </Link>
                             </li>
                             <li whileHover={{scale:1.3, originX:0, color:'#00000'}} transition={{type:'spring', stiffness:1000}}>
-                                <Link to="/dashboard/review">
+                                <Link to="/dashboard/review" className={panel === "reviews" ? "link-active" : ""}>
                                     <FontAwesomeIcon icon={faQuoteLeft}/> <span>Reviews</span>
                                 </Link>
                             </li>

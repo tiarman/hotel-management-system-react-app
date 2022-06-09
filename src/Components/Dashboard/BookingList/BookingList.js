@@ -67,7 +67,7 @@ const BookingList = () => {
                                         <td>
                                             <select className={book.status === "Pending" ? "btn btn-danger": book.status === "Done" ? "btn btn-success" : "btn btn-warning"}  defaultValue={book.status} onChange={e => handleStatusChange(book._id, e.target.value)}>
                                                 <option className="bg-white text-muted">Pending</option>
-                                                <option className="bg-white text-muted">On going</option>
+                                                {/* <option className="bg-white text-muted">On going</option> */}
                                                 <option className="bg-white text-muted">Done</option>
                                             </select>
                                         </td>

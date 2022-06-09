@@ -6,10 +6,11 @@ import LoadingSpinner from '../../../../Pages/Shared/LoadingSpinner/LoadingSpinn
 import EditServiceModal from './EditServiceModal';
 
 
-const ManageRooms = ({ admin, testAdmin }) => {
+const ManageRooms = ({admin, testAdmin}) => {
     const [services, setServices] = useState(null);
     const [editedService, setEditedService] = useState({});
     const [isEditedSuccess, setIsEditedSuccess] = useState(false);
+    // setItem = 'test@admin.com';
 
     const [modalIsOpen, setIsOpen] = useState(false);
     function openModal() {
@@ -40,7 +41,7 @@ const ManageRooms = ({ admin, testAdmin }) => {
         const isAccess = mainService.find(service => service._id === id);
         
         if (admin === testAdmin && isAccess ) {
-            swal("As a test admin you don't deleted this 3 service", {
+            swal("As a test admin you don't deleted this service", {
                 icon: "warning",
             })
         } else {
@@ -54,7 +55,7 @@ const ManageRooms = ({ admin, testAdmin }) => {
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:8000/deleteRooms/${id}`, {
+                    fetch(`http://localhost:8000/delete-rooms/${id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())
@@ -131,7 +132,7 @@ const ManageRooms = ({ admin, testAdmin }) => {
                 }
 
                 {
-                    services?.length === 0 && <h2>No Service Here</h2>
+                    services?.length === 0 && <h2 style={{ color: 'red', lineHeight : 10, padding: 10 , textAlign : 'center'}}>No Rooms Here</h2>
                 }
 
                 <EditServiceModal modalIsOpen={modalIsOpen} closeModal={closeModal} isEditedSuccess={isEditedSuccess} setIsEditedSuccess={setIsEditedSuccess} service={editedService}></EditServiceModal>

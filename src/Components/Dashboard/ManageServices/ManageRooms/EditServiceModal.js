@@ -21,7 +21,7 @@ const EditServiceModal = ({ modalIsOpen, closeModal, isEditedSuccess,  setIsEdit
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        fetch(`http://localhost:8000/updateRooms/${_id}`, {
+        fetch(`http://localhost:8000/update-rooms/${_id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)

@@ -23,6 +23,7 @@ const DashboardNavbar = ({ setShowSidebar, show }) => {
                      :panel === "book" ? "book"
                      :panel === "user-book-list" ? "Book List"
                      :panel === "reviews" ? "AddReviews"
+                     :panel === "reviews" ? "Reviews"
                      :panel === "add-rooms"? "Add Rooms"
                      :panel === "add-admins" ? "Add Admins"
                      :panel === "all-bookings" ?"All Bookings" 

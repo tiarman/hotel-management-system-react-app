@@ -7,7 +7,7 @@ const SingleMember = ({service}) => {
         <div className='team-member'>
             <Image style={{height:'300px'}} src={service.img} alt="..." />
             <h5>{service.name}</h5>
-            <button type="">Get Services</button>
+            <button className='btn btn-success' type="">Get Services</button>
         </div>
     );
 };

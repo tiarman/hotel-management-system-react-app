@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import logo from '../../../logo.svg';
+import logo from '../../../Images/hotellogo1.png';
 import ProfilePopper from '../ProfilePopper/ProfilePopper';
 import { UserContext } from './../../../App';
 
@@ -29,9 +29,9 @@ const NavBar = () => {
                   <Navbar.Collapse id="navbar-nav" >
                     <Nav className="ml-auto text-center">
                       <Nav.Link  smooth as={HashLink} to="#home"   className="mr-3"><strong>Home</strong></Nav.Link>
-                      <Nav.Link  smooth as={HashLink} to="#about" className="mr-3"><strong>About</strong></Nav.Link>
-                      <Nav.Link  smooth as={HashLink} to="#service" className="mr-3"><strong>Service</strong></Nav.Link>
-                      <Nav.Link  smooth as={HashLink} to="#blog" className="mr-3"><strong>Blogs</strong></Nav.Link>
+                      {/* <Nav.Link  smooth as={HashLink} to="#about" className="mr-3"><strong>About</strong></Nav.Link> */}
+                      <Nav.Link  smooth as={HashLink} to="#bookings" className="mr-3"><strong>Bookings</strong></Nav.Link>
+                      <Nav.Link  smooth as={HashLink} to="#services" className="mr-3"><strong>Services</strong></Nav.Link>
                       <Nav.Link smooth as={HashLink} to='#reviews' className="mr-3"><strong>Reviews</strong></Nav.Link>
                       <Nav.Link  smooth as={HashLink} to="#contact"  className="mr-3"><strong>Contact</strong></Nav.Link>
                       <Nav.Link   as={Link} to="/dashboard/profile"  className="mr-3"><strong>Dashboard</strong></Nav.Link>

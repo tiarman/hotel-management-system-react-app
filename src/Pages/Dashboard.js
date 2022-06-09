@@ -52,9 +52,9 @@ const Dashboard = () => {
                 {
                     panel === "profile" ?  <Profile />
                     :panel === 'book' ? <Book />
-                    :panel === 'add-rooms' ? <AddRooms />
-                    :panel === "manage-rooms" ? <ManageRooms />
-                    :panel === "add-admins"  ? <AddAdmin />
+                    :panel === 'add-rooms' && isAdmin ? <AddRooms />
+                    :panel === "manage-rooms" && isAdmin ? <ManageRooms />
+                    :panel === "add-admins"  && isAdmin ? <AddAdmin />
                     :panel === "all-bookings" && isAdmin ? <BookingList />
                     :panel === "user-book-list" ? <UserBookList />
                     :panel === "all-admins" && isAdmin  ? <ManageAdmin />

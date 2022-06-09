@@ -41,7 +41,7 @@ const BookingCard = () => {
     }, [])
 
     return (
-        <section className="bookings" id='booking'>
+        <section className="bookings" id='bookings'>
             <Container>
                 <h5>What We Do</h5>
                 <h3>Bookings We Provide</h3>
