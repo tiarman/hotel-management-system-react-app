@@ -1,5 +1,7 @@
 .testimonials {
-    background: aliceblue;
+    /* background: aliceblue; */
+    /* background-color: rgba(201, 109, 201, 0.281); */
+    background-color: whitesmoke;
     height: 700px;
   }
   
@@ -72,7 +74,8 @@
   }
   
   .testimonials .card {
-    background: #fff;
+    background: #4d4d53;
+    /* background-color: #c96dc948; */
     box-shadow: 0 8px 30px -7px #c9dff0;
     margin: 0 20px;
     min-height: 340px;
@@ -98,12 +101,12 @@
   
   .testimonials .card h5 span {
     font-size: 18px;
-    color: #666666;
+    color: hsl(0, 0%, 97%);
   }
   
   .testimonials .card p {
     font-size: 18px;
-    color: #777;
+    color: white;
     padding-bottom: 15px;
   }
   

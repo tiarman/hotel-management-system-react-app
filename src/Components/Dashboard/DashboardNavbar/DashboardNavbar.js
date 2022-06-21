@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import ProfilePopper from '../../Home/ProfilePopper/ProfilePopper';
 
 
 const DashboardNavbar = ({ setShowSidebar, show }) => {
@@ -20,12 +21,13 @@ const DashboardNavbar = ({ setShowSidebar, show }) => {
                     {
                      panel === "profile" ? "profile" 
                      :panel === "book" ? "book"
-                     :panel === "book-list" ? "Book List"
+                     :panel === "user-book-list" ? "Book List"
+                     :panel === "reviews" ? "AddReviews"
                      :panel === "reviews" ? "Reviews"
                      :panel === "add-rooms"? "Add Rooms"
                      :panel === "add-admins" ? "Add Admins"
-                     :panel === "all-orders" ?"All Orders" 
-                     :panel === "manage-services" ? "Manage Services"
+                     :panel === "all-bookings" ?"All Bookings" 
+                     :panel === "manage-rooms" ? "Manage Rooms"
                      :panel === "all-reviews" ? "Manage Reviews"
                      :panel === "all-admins" ? "Manage Admins"
                      : ""
@@ -34,7 +36,7 @@ const DashboardNavbar = ({ setShowSidebar, show }) => {
             </Navbar.Brand>
             <Navbar.Collapse id="responsive-navbar-nav">
                 <div className="ml-auto" >
-                    <p>Profile popper</p>
+                   <ProfilePopper/>
                 </div>
             </Navbar.Collapse>
         </Container>

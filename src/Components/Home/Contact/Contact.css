@@ -1,5 +1,7 @@
 .contact-container {
   /* background-image: url("../../../images/contact-bg.png"); */
+  /* background-color: rgba(201, 109, 201, 0.281); */
+  background-color: #f5f5f5;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,7 +9,7 @@
 }
 
 .contact-form {
-  background-color: #5d53d0;
+  background-color: #4d4d53;
   padding: 20px;
   border-radius: 10px;
 }
@@ -22,7 +24,7 @@
 .contact-group textarea {
   width: 100%;
   border: 2px solid #fafafc;
-  background: #a7a7ec;
+  background: #ceb4c29d;
   padding: 10px;
   border-radius: 5px;
   transition: 0.3s;
@@ -30,7 +32,7 @@
 
 .contact-group input:focus,
 .contact-group textarea:focus {
-  border: 2px solid #054a8a;
+  border: 3px solid #46e7df;
   outline: 0;
 }
 

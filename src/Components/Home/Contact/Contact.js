@@ -30,7 +30,7 @@ const Contact = () => {
         <section className="contact-container  pb-5" id='contact'>
             <Container className="pt-5"> 
                     <h3 className="text-center">Get In Touch</h3>
-                    <p className="row col-md-8 text-center m-auto">I'd Love to hear from you . Whether you have a question or just want to say hi, fell free to drop a message. I'll try my best to get back to you</p>
+                    <p className="row col-md-8 text-center m-auto">We'd Love to hear from you . Whether you have a question or just want to say hi, fell free to drop a message.</p>
                     <div className="mt-4">
                         <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
                             <Row>
@@ -60,7 +60,7 @@ const Contact = () => {
                                 
                             </Row>
                             <div className="mt-3 text-center">
-                            <motion.button whileHover={{scale:1.1, textShadow:'0px 0px 8px rgb(255 255 255)', boxShadow:'0px 0px 8px rgb(255 255 255)'}} className='main-button'>Send Message</motion.button>
+                            <motion.button whileHover={{scale:1.1, textShadow:'0px 0px 8px rgb(255 255 255)', boxShadow:'0px 0px 8px rgb(255 255 255)'}} className='main-button btn btn-success'>Send Message</motion.button>
                             </div>
                         </form>
                     </div>

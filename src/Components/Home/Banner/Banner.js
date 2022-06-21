@@ -2,7 +2,7 @@ import React from 'react';
 import './Banner.css';
 import banner from '../../../Images/11.jpg';
 import discount from '../../../Images/discount.png'
-import discount2 from '../../../Images/discount2.png'
+import discount2 from '../../../Images/discount2.png';
 
 const Banner = () => {
     return (

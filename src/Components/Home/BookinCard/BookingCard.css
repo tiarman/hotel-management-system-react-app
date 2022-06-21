@@ -1,45 +1,37 @@
-#rooms {
-    background: #f5f5f5;
-  }
-  
-  #rooms h5 {
-    color: #ed5217;
-    font-weight: 500;
-  }
-  
-  #rooms h1 {
-    font-weight: 600;
-    margin-top: 1rem;
-    position: relative;
-  }
-  
-  #rooms h1::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -20px;
-    width: 6rem;
-    height: 3px;
-    background: #ed5217;
-    border-radius: 20px;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-  
-  #rooms > div {
-    width: 70%;
-  }
-  
-  @media (max-width: 768px) {
-    #rooms > div {
-      width: 100%;
-    }
-    #rooms h5 {
-      font-weight: 600;
-    }
-    #rooms h1 {
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
-  }
-  
+.bookings {
+  /* background-image: url("../../../images/footerBg.png"); */
+  /* background-color: rgba(201, 109, 201, 0.281); */
+  background-color: whitesmoke;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.bookings h5 {
+  color: #10bad4;
+  font-weight: 500;
+  text-align: center;
+}
+
+.bookings h3 {
+  text-align: center;
+  color: #404655;
+  font-weight: 600;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.bookings h3::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  width: 6rem;
+  height: 3px;
+  background: rgba(16, 186, 212, 0.5);
+  border-radius: 20px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}

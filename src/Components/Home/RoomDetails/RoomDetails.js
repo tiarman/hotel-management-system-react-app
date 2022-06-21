@@ -1,30 +1,35 @@
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Card, Col } from 'react-bootstrap';
-import Fade from 'react-reveal/Fade';
+// import Bounce from 'react-reveal/Rotate';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion/dist/framer-motion';
 import './RoomDetails.css'
+import { useContext } from 'react';
+import { UserContext } from './../../../App';
+import Zoom from 'react-reveal/Zoom';
 
 const RoomDetails = ({ room }) => {
+    const { setSelectedRoom, isAdmin } = useContext(UserContext);
     const { name, image, description, price } = room;
+    
     return (
-        <Col md={4} className="mb-5 text-center room-details">
-            <Fade bottom duration={2500} distance="40px">
-                <Card
-                    className="border-0 py-4"
-                    style={{ maxWidth: '25rem' }}>
-                    <Card.Img variant="top" height="100" src={image} style={{ objectFit: "contain" }} />
-                    <Card.Body className="pt-0">
-                        <Card.Title as="h4" className="my-4">{name}</Card.Title>
-                        <Card.Text className="text-muted">{description}</Card.Text>
-                        <div>
-                            <p>${price}</p>
-                            <Button
-                                className="btn-main"
-                                >
-                                Book Now
-                            </Button>
-                        </div>
-                    </Card.Body>
-                </Card>
-            </Fade>
+         <Col lg={4} md={6} className="mt-5">
+             <div  drag dragConstraints={{left:0, top:0, right:0, bottom:0}} dragElastic={0.5}>
+                <Card className="border-0 p-3 container card-container ">
+                    <Zoom top cascade>
+                        <img className='img-fluid' src={image} alt={name} />
+                            <Card.Body>
+                                <Card.Title as="h5" className="text-info">{name}</Card.Title>
+                                <Card.Text as='p' className="text-muted">{description}</Card.Text>
+                            </Card.Body>  
+                            <Card.Footer className='d-flex justify-content-between align-items-center border-0'>
+                                <h5>৳ {price}</h5>
+                                <Button  variant='info'  as={Link} to={isAdmin ? "/dashboard/all-bookings" : "/dashboard/book"} onClick={() => setSelectedRoom(room)} className="main-button"><FontAwesomeIcon icon={faShoppingCart}  />  Book</Button>          
+                            </Card.Footer>
+                        </Zoom>
+                    </Card>
+             </div>
         </Col>
     );
 };
